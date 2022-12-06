@@ -12,14 +12,11 @@ int main(void) {
 
     start = clock();
 
-    for(double i = 1; i < N; i++) {
-        s = s + (1/i/i);
-    }
+    for(double i = 1; i < N; i++) {  s = s + (1/i/i); }
 
     end = clock();
 
     temps = ((double) (end-start)) / CLOCKS_PER_SEC;
 
     printf("Résultat = %lf ; Temps = %lf\n", s, temps);
-
 }

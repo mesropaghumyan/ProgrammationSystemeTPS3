@@ -4,15 +4,15 @@
 #include <signal.h>
 #include <time.h>
 
-long long int N = 496688;
+long long int N = 14400000000;
 double s = 0;
 
 void sig_handler(int signum){
-  printf("Somme = %lf\n", s);
-  alarm(1);
+  //printf("Somme = %lf\n", s);
+  //alarm(1);
 }
  
-int main(){
+int main() {
 
     double temps;
     clock_t start, end;
@@ -25,7 +25,7 @@ int main(){
     for(double i=1; i < N; i++){
         
         s = s + (1/(1+i*i));
-        pause();
+        //pause();
     }
 
     end = clock();
@@ -33,6 +33,7 @@ int main(){
     temps = ((double) (end-start)) / CLOCKS_PER_SEC;
 
     printf("Temps = %lf\n", temps);
+    printf("Somme = %lf\n", s);
  
 return 0;
 }

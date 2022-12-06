@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-long long int N = 8000000000;
+long long int N = 10000000000;
 
 int main(void) {
 

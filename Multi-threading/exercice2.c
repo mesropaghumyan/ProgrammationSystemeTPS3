@@ -3,9 +3,9 @@
 #include <pthread.h>
 #include <time.h>
 
-long long int N = 8000000000;
+long long int N = 7200000000;
 
-int T = 1;
+int T = 3;
 
 void* somme(void* arg) {
     double index = *(double*)arg;
@@ -19,7 +19,7 @@ void* somme(void* arg) {
 
     for(double i = start+1; i < end+1; i++) {
         s = s + (1/(1+i*i)); 
-       //printf("Thread %lf -> Somme = %lf\n", index, s);
+        printf("Thread %lf -> Somme = %lf\n", index, s);
     }
 
     *(double*)arg = s;

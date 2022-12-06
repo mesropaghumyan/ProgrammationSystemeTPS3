@@ -23,9 +23,7 @@ int main(void) {
             id = -1;
             wait(0);
         }
-        else {
-            id = (double)i;
-        }
+        else { id = (double)i; }
 
         i++;
     }
@@ -43,9 +41,6 @@ int main(void) {
         int cmpt = 0;
         int cmpt_p = 0;
 
-        /**
-         * récupération du contenue du fichier
-        */
         while ( ! feof( ff ) ) {
             fgets( somme, 100, ff );
             cmpt++;
@@ -59,8 +54,6 @@ int main(void) {
         while(somme[cmpt] != '\0') {
             if(somme[cmpt] == ';') {
                 ss = strtod(nb, &eptr);
-                printf("nb = %s\n", nb);
-                printf("ss = %lf\n", ss);
                 resGlobal = resGlobal + ss;
                 nb[0] = '\0';
                 cmpt_p = 0;
@@ -72,9 +65,7 @@ int main(void) {
             }
         }
 
-        //if(somme[99] == '\0') { printf("true\n"); } else {printf("false\n");}
         printf("somme : %lf\n", resGlobal);
-        printf("res : %s\n", somme);
 
     }
     else {
@@ -98,8 +89,6 @@ int main(void) {
         fprintf(f, "%s;", buffer);
 
         fclose(f);
-
-        printf("Je suis le fils numéro %d, mon PID est %d et mon père à pour PID %d et j'ai caluler somme = %lf.\n", i, getpid(), getppid(), s);
     }
 
     return 0;
